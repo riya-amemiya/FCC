@@ -23,7 +23,13 @@ Object.defineProperty(exports, "Window", {
     return _Window["default"];
   }
 });
-exports.UTF = exports.Search = exports.Aimg = exports.Css = exports.Day = exports.Spt = exports.Com = exports.Push = exports.Zeller = exports.Diagonal = exports.Ratio = exports.Gcd = exports.Repetition = exports.Pow = exports.nPr = exports.nCr = exports.Random = exports.maths = exports.Mathsnew = exports.Maths = exports.Thedetails = exports.Accordion = exports.Modal_simple = exports.hello = void 0;
+Object.defineProperty(exports, "maths", {
+  enumerable: true,
+  get: function get() {
+    return _Math["default"];
+  }
+});
+exports.UTF = exports.Search = exports.Aimg = exports.Css = exports.Day = exports.Spt = exports.Com = exports.Push = exports.Zeller = exports.Diagonal = exports.Ratio = exports.Gcd = exports.Repetition = exports.Pow = exports.nPr = exports.nCr = exports.Random = exports.Mathsnew = exports.Maths = exports.Thedetails = exports.Accordion = exports.Modal_simple = exports.hello = void 0;
 
 var _Search = _interopRequireDefault(require("./components/Search/Search"));
 
@@ -38,6 +44,8 @@ var _Window = _interopRequireDefault(require("./function/window/Window"));
 var UTF = _interopRequireWildcard(require("./function/utf/UTF"));
 
 exports.UTF = UTF;
+
+var _Math = _interopRequireDefault(require("./function/Math/Math"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -87,285 +95,6 @@ var Sns = function Sns() {
   var getid = document.getElementById(reqid);
   getid.innerHTML = "<div class=\"btn-sns\">\n\t\t\t\t<a href=".concat(req.url, " class=").concat(req.classs, " btn-hover>\n\t\t\t\t\t<span class=").concat(req.span, ">\n\t\t\t\t\t\t<i class=").concat(req.i, "></i>\n\t\t\t\t\t</span>Follow Me</a>\n\t\t\t</div>");
 };
-
-var maths = function maths() {
-  _classCallCheck(this, maths);
-
-  this.random = function (num) {
-    Number(num);
-    var test = Math.floor(Math.random() * num);
-    return test;
-  };
-
-  this.sqrt = function (n) {
-    Number(n); //平方根
-
-    var sqrts = Math.sqrt(n);
-    return sqrts;
-  };
-
-  this.repetition = function (x) {
-    Number(x); //階乗
-
-    var age = 1;
-
-    for (var i = 2; i <= x; i++) {
-      age *= i;
-    }
-
-    return age;
-  };
-
-  this.ncr = function (n, r) {
-    Number(n);
-    Number(r); //nCr
-
-    var x;
-    var z;
-    var y;
-    var age = 1;
-    y = n;
-    z = r;
-    x = 0;
-
-    while (x == 0) {
-      if (r == 1) {
-        y = y * r;
-      }
-
-      r--;
-
-      if (r == 0) {
-        x++;
-      } else {
-        n--;
-
-        if (n == 0) {
-          x++;
-          break;
-        }
-
-        y = y * n;
-      }
-    }
-
-    for (var i = 2; i <= z; i++) {
-      age *= i;
-    }
-
-    y = y / age;
-    return y;
-  };
-
-  this.ncrs = function (n, r) {
-    Number(n);
-    Number(r); //重複を許して取り出す
-
-    n = n + r - 1;
-    n = Maths.ncr(n, r);
-    return n;
-  };
-
-  this.gcd = function (f, x) {
-    Number(f);
-    Number(x); //最大公約数
-
-    var r, tmp;
-
-    if (f < x) {
-      tmp = f;
-      f = x;
-      x = tmp;
-    }
-    /* ユークリッドの互除法 */
-
-
-    r = f % x;
-
-    while (r != 0) {
-      f = x;
-      x = r;
-      r = f % x;
-    }
-
-    return x;
-  };
-
-  this.npr = function () {
-    var n = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-    var r = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-    Number(n);
-    Number(r); //nPr
-
-    var y;
-    var x = 0;
-    y = n;
-
-    while (x == 0) {
-      if (r == 1) {
-        y = y * r;
-      }
-
-      r--;
-
-      if (r == 0) {
-        x++;
-      } else {
-        n--;
-
-        if (n == 0) {
-          x++;
-          break;
-        }
-
-        y = y * n;
-      }
-    }
-
-    return y;
-  };
-
-  this.ratio = function (a, b, x, y) {
-    Number(a);
-    Number(b);
-    Number(x);
-    Number(y); //比率
-
-    a *= y;
-    b *= x;
-
-    if (a < b) {
-      if (b % a == 0) {
-        return b / a;
-      } else {
-        return "".concat(a, "/").concat(b);
-      }
-    } else {
-      if (a % b == 0) {
-        return a / b;
-      } else {
-        return "".concat(b, "/").concat(a);
-      }
-    }
-  };
-
-  this.diagonal = function (n) {
-    Number(n); //対角線の数
-
-    n = n * (n - 3) / 2;
-    return n;
-  };
-
-  this.pow = function (num, n) {
-    Number(num);
-    Number(n); //xのy乗
-
-    var nums = num;
-
-    for (var i = 2; i <= n; i++) {
-      nums *= num;
-    }
-
-    return nums;
-  };
-
-  this.cone = function (num1, num2) {
-    Number(num1);
-    Number(num2);
-    num1 *= num1;
-    num2 *= num1;
-
-    if (num2 % 3 == 0) {
-      return num2 / 3;
-    } else {
-      return "".concat(num2, "/3");
-    }
-  };
-
-  this.pMultiplicative = function (a, b) {
-    Number(a);
-    Number(b);
-    a = "".concat(a * a, "+").concat(2 * a * b, "+").concat(b * b);
-    return a;
-  };
-
-  this.rpMultiplicative = function (a, b) {
-    Number(a);
-    Number(b);
-    a = "(".concat(Math.sqrt(a), "+").concat(Math.sqrt(b), ")^2");
-    return a;
-  };
-
-  this.mMultiplicative = function (a, b) {
-    Number(a);
-    Number(b);
-    a = "".concat(a * a, "-").concat(2 * a * b, "+").concat(b * b);
-    return a;
-  };
-
-  this.rmMultiplicative = function (a, b) {
-    Number(a);
-    Number(b);
-    a = "(".concat(Math.sqrt(a), "-").concat(Math.sqrt(b), ")^2");
-    return a;
-  };
-
-  this.pmMultiplicative = function (a, b) {
-    Number(a);
-    Number(b);
-    a = "".concat(a * a, "-").concat(b * b);
-    return a;
-  };
-
-  this.rpmMultiplicative = function (a, b) {
-    Number(a);
-    Number(b);
-    a = "(".concat(Math.sqrt(a), "+").concat(Math.sqrt(b), ")(").concat(Math.sqrt(a), "-").concat(Math.sqrt(b), ")");
-    return a;
-  };
-
-  this.Pythagorean = function (a, b) {
-    Number(a);
-    Number(b);
-    a = a * a + b * b;
-    return a;
-  };
-
-  this.rPythagorean = function (a, b) {
-    Number(a);
-    Number(b);
-    a = a * a - b * b;
-    return a;
-  };
-
-  this.Binarynumber = function (num) {
-    Number(num);
-    num = num.length;
-
-    for (var i = 1; i < num; i++) {
-      num = num;
-      console.log(num);
-    }
-
-    return num;
-  };
-
-  this.k = function (num) {
-    Number(num);
-    num += 273;
-    return num;
-  };
-  /*this.Tem = (c) => {
-  	let k = c + 273.15;
-  	let f = 1.8 * c + 32;
-  	let r = 1.8 * k;
-  	const tet = `ケルビン: ${k} 摂氏度: ${c} 華氏度: ${f} ランキン度: ${r}`;
-  	return (k, c, f, r);
-  }*/
-
-};
-
-exports.maths = maths;
 
 var css = function css() {
   _classCallCheck(this, css);
@@ -544,11 +273,11 @@ var Diagonal = function Diagonal(n) {
 };
 
 exports.Diagonal = Diagonal;
-var Maths = new maths();
+var Maths = new _Math["default"]();
 exports.Maths = Maths;
 
 var Mathsnew = function Mathsnew() {
-  var math = new maths();
+  var math = new _Math["default"]();
   return math;
 };
 

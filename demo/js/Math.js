@@ -1,3 +1,8 @@
 import FCC from './../../src/FCC'
 import './../scss/index.scss'
-console.log('b');
+FCC.Maths
+FCC.Html.jscode("root", `
+<div>
+<h1>Math</h1>
+</div>
+`)
