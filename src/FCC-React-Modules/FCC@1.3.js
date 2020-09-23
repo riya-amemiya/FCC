@@ -508,7 +508,12 @@ let Spt = (num = 1, num2 = 1) => {
 	return num / num2;
 }
 let Day = new Date();
+const hello = () => {
+	console.log("Welcome to FCC You can take the tutorial by accessing this URL");
+	console.log("https://riya81.github.io/FCC/");
+}
 export {
+	hello,
 	Modal_simple,
 	Accordion,
 	Thedetails,

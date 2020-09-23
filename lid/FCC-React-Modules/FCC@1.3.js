@@ -23,7 +23,7 @@ Object.defineProperty(exports, "Window", {
     return _Window["default"];
   }
 });
-exports.UTF = exports.Search = exports.Aimg = exports.Css = exports.Day = exports.Spt = exports.Com = exports.Push = exports.Zeller = exports.Diagonal = exports.Ratio = exports.Gcd = exports.Repetition = exports.Pow = exports.nPr = exports.nCr = exports.Random = exports.maths = exports.Mathsnew = exports.Maths = exports.Thedetails = exports.Accordion = exports.Modal_simple = void 0;
+exports.UTF = exports.Search = exports.Aimg = exports.Css = exports.Day = exports.Spt = exports.Com = exports.Push = exports.Zeller = exports.Diagonal = exports.Ratio = exports.Gcd = exports.Repetition = exports.Pow = exports.nPr = exports.nCr = exports.Random = exports.maths = exports.Mathsnew = exports.Maths = exports.Thedetails = exports.Accordion = exports.Modal_simple = exports.hello = void 0;
 
 var _Search = _interopRequireDefault(require("./components/Search/Search"));
 
@@ -647,6 +647,13 @@ var Spt = function Spt() {
 };
 
 exports.Spt = Spt;
-var Day = new Date(); //α version
-
+var Day = new Date();
 exports.Day = Day;
+
+var hello = function hello() {
+  console.log("Welcome to FCC You can take the tutorial by accessing this URL");
+  console.log("https://riya81.github.io/FCC/");
+}; //α version
+
+
+exports.hello = hello;
