@@ -1,0 +1,9 @@
+@import "template";
+$color:#FFF;
+$background: #5dca88;
+
+body {
+    .btn {
+        @include heading-tag($color, $background);
+    }
+}
