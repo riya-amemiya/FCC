@@ -59,7 +59,6 @@ class html {
         html = html.replace(/var/g, '<span class="vc">var</span><span class="l">')
         html = html.replace(/let/g, '<span class="vc">let</span><span class="l">')
         html = html.replace(/const/g, '<span class="vc">const</span><span class="l">')
-        //html = html.replace(/from/g, '<span class="import">from</span>')
         return document.getElementById(id).innerHTML = html
     }
     hasclass(id = "", get = "") {
