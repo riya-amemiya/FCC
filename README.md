@@ -18,4 +18,4 @@ import FCC from './JavaScript/src/FCC'
 詳しくはこのURLをクリック
 
 
-https://whispering-sands-26859.herokuapp.com/
+https://riya81.github.io/FCC/
