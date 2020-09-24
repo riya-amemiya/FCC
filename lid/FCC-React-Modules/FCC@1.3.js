@@ -29,6 +29,12 @@ Object.defineProperty(exports, "maths", {
     return _Math["default"];
   }
 });
+Object.defineProperty(exports, "Code", {
+  enumerable: true,
+  get: function get() {
+    return _Code["default"];
+  }
+});
 exports.UTF = exports.Search = exports.Aimg = exports.Css = exports.Day = exports.Spt = exports.Com = exports.Push = exports.Zeller = exports.Diagonal = exports.Ratio = exports.Gcd = exports.Repetition = exports.Pow = exports.nPr = exports.nCr = exports.Random = exports.Mathsnew = exports.Maths = exports.Thedetails = exports.Accordion = exports.Modal_simple = exports.hello = void 0;
 
 var _Search = _interopRequireDefault(require("./components/Search/Search"));
@@ -46,6 +52,8 @@ var UTF = _interopRequireWildcard(require("./function/utf/UTF"));
 exports.UTF = UTF;
 
 var _Math = _interopRequireDefault(require("./function/Math/Math"));
+
+var _Code = _interopRequireDefault(require("./function/code/Code"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 

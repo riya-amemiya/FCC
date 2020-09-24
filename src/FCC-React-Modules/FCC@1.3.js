@@ -7,6 +7,7 @@ import Html from './function/html/Html'
 import Window from './function/window/Window'
 import * as UTF from './function/utf/UTF'
 import maths from './function/Math/Math'
+import Code from './function/code/Code'
 const Search = (req, reqid) => {
 	const getid = document.getElementById(reqid)
 	getid.innerHTML = Sciences(req);
@@ -317,7 +318,8 @@ export {
 	Search,
 	//Ajax,
 	Time,
-	Html
+	Html,
+	Code
 	//FCC_jQuery
 };
 //α version

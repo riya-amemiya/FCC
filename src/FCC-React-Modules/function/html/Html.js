@@ -11,8 +11,8 @@ class html {
         code = code.replace(/from/g, 'fro%m')
         code = code.replace(/class\=/g, 'cla%ss=')
         code = code.replace(/class \=/g, 'cla%ss=')
-        let code2 = ""
-        let code3 = ""
+        let code2 = "";
+        let code3 = "";
         for (let i = 0; i < html.length; i++) {
             if (code.indexOf('fro%m') != -1) {
                 code2 = code.slice(code.indexOf('fro%m'))
