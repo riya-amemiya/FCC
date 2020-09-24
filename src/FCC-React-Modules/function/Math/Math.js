@@ -179,11 +179,11 @@ class maths {
             return num
         }
         /*this.Tem = (c) => {
-        	let k = c + 273.15;
+            let k = c + 273.15;
         	let f = 1.8 * c + 32;
         	let r = 1.8 * k;
-        	const tet = `ケルビン: ${k} 摂氏度: ${c} 華氏度: ${f} ランキン度: ${r}`;
-        	return (k, c, f, r);
+            const tet = `ケルビン: ${k} 摂氏度: ${c} 華氏度: ${f} ランキン度: ${r}`;
+            return (k, c, f, r);
         }*/
     }
 }
