@@ -1,4 +1,3 @@
-//import * as FCC_jQuery from './jQuery/FCC-jQuery-Module';
 import Sciences from './components/Search/Search'
 import ModalSimple from "./components/Modal/simples/Modal_simple";
 //import Ajax from './function/ajax/Ajax'
@@ -14,8 +13,7 @@ const Search = (req, reqid) => {
 }
 const Modal_simple = (req, reqid) => {
 	const getid = document.getElementById(reqid)
-	getid.innerHTML = Sciences(req);
-	ModalSimple(req)
+	getid.innerHTML = ModalSimple(req);
 }
 const Aimg = (req, reqid) => {
 	const getid = document.getElementById(reqid)

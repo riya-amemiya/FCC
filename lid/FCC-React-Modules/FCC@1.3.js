@@ -72,8 +72,7 @@ exports.Search = Search;
 
 var Modal_simple = function Modal_simple(req, reqid) {
   var getid = document.getElementById(reqid);
-  getid.innerHTML = (0, _Search["default"])(req);
-  (0, _Modal_simple["default"])(req);
+  getid.innerHTML = (0, _Modal_simple["default"])(req);
 };
 
 exports.Modal_simple = Modal_simple;
