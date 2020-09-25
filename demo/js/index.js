@@ -21,4 +21,3 @@ FCC.Html.jscode("root", `
 <a href="./Math.html"><button>Math</button></a>
 </div>
 `)
-//console.log(FCC.Html.hasclass('a', "animate__animated"));
