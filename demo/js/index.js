@@ -1,6 +1,7 @@
 import FCC from './../../src/FCC'
 import './../scss/index.scss'
 import $ from 'jquery'
+
 FCC.Html.jscode("root", `
 <header><div class="head"><p>FCCの使い方</p></div></header>
 <div class="top">
@@ -17,6 +18,5 @@ FCC.Html.jscode("root", `
 <div class="he"><p>Mathオブジェクト</p></div>
 <div><p>JavaScriptのMathでは出来ない処理が出来ます</p></div>
 <a href="./Math.html"><p class="btn">Math</p></a>
-</div>
-</div>
+</div></div>
 `)
