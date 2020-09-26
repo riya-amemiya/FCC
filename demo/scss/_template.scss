@@ -3,44 +3,6 @@
 @import "neat/neat";
 @import "base/base";
 
-body {
-	margin: 0px;
-	z-index: 0;
-
-	a {
-		cursor: pointer;
-	}
-
-	.link-study {
-		cursor: pointer;
-	}
-
-	.pointer {
-		cursor: pointer;
-	}
-}
-
-.Side-by-side {
-	display: inline-block;
-}
-
-.text-p {
-	font-weight: lighter;
-	font-size: 30px;
-}
-
-.not {
-	display: none;
-}
-
-.active {
-	display: block;
-}
-
-.btn-top {
-	margin-top: 10px;
-}
-
 @mixin dark-mode {
 	color: lighten(black, 50%);
 	background-color: black;
@@ -281,11 +243,11 @@ body {
 	}
 }
 
-@mixin heading-underline {
-	border-bottom: solid 3px black;
+@mixin heading-underline($color) {
+	border-bottom: solid 3px $color;
 }
 
-@mixin heading-line-up-and-down {
+@mixin heading-line-up-and-down($color) {
 	color: $color;
 	/*文字色*/
 	padding: 0.5em 0;
@@ -389,6 +351,51 @@ body {
 		position: absolute;
 		left: 0.5em;
 		/*左端からのアイコンまでの距離*/
+	}
+}
+
+@mixin header-border-background($tag, $color, $background, $border) {
+	#{$tag} {
+		padding: 0.5em;
+		/*文字周りの余白*/
+		color: $color;
+		/*文字色*/
+		background: $background;
+		/*背景色*/
+		border-bottom: solid 3px $border;
+		/*下線*/
+	}
+}
+
+@mixin dream($tag, $color) {
+	#{$tag} {
+		position: relative;
+		padding: 8px 15px;
+		margin-left: 40px;
+		background: $color;
+		border-radius: 20px;
+	}
+
+	#{$tag}:before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f111";
+		font-weight: 900;
+		position: absolute;
+		font-size: 15px;
+		left: -40px;
+		bottom: 0;
+		color: $color;
+	}
+
+	#{$tag}:after {
+		font-family: "Font Awesome 5 Free";
+		content: "\f111";
+		font-weight: 900;
+		position: absolute;
+		font-size: 23px;
+		left: -23px;
+		bottom: 0;
+		color: $color;
 	}
 }
 
@@ -1290,4 +1297,55 @@ body {
 			}
 		}
 	}
+}
+
+@mixin left-border($tag, $color, $border) {
+	#{$tag} {
+		padding: 0.25em 0.5em;
+		/*上下 左右の余白*/
+		color: $color;
+		/*文字色*/
+		background: transparent;
+		/*背景透明に*/
+		border-left: solid 5px $border;
+		/*左線*/
+	}
+}
+
+body {
+	margin: 0px;
+	z-index: 0;
+
+	a {
+		cursor: pointer;
+	}
+
+	.link-study {
+		cursor: pointer;
+	}
+
+	.pointer {
+		cursor: pointer;
+	}
+}
+
+.Side-by-side {
+	display: inline-block;
+}
+
+.text-p {
+	font-weight: lighter;
+	font-size: 30px;
+}
+
+.not {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+.btn-top {
+	margin-top: 10px;
 }

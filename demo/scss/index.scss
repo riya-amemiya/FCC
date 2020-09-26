@@ -1,10 +1,52 @@
 @import "template";
+$color:#364e96;
 
 body {
     text-align: center;
 
-    h1 {
-        font-size: 25px;
+    @include header;
+
+    .top {
+        padding: 100px 0px 100px 0px;
+    }
+
+    .po {
+        width: 25%;
+    }
+
+    .lo {
+        width: 30%;
+    }
+
+    .tag {
+        margin: 0px auto;
+        @include heading-underline($color);
+    }
+
+    .he {
+        padding-top: 10px;
+        width: 25%;
+        margin: 0px auto;
+
+        p {
+            @include heading-tag(white, $color);
+        }
+    }
+
+    .mi {
+        width: 5%;
+    }
+
+    .btn {
+        @include button-download($color, $color)
+    }
+
+    .set {
+        padding-top: 10px;
+        color: white;
+        width: 25%;
+        margin: 0px auto;
+        @include dream("p", $color);
     }
 
     p {

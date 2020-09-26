@@ -92,6 +92,7 @@ var html = /*#__PURE__*/function () {
       html = html.replace(/from/g, '<span class="i">from</span><span class="f">');
       html = html.replace(/var/g, '<span class="vc">var</span><span class="l">');
       html = html.replace(/let/g, '<span class="vc">let</span><span class="l">');
+      console.log(html);
       html = html.replace(/const/g, '<span class="vc">const</span><span class="l">');
       return document.getElementById(id).innerHTML = html;
     }
