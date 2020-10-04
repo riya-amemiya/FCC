@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var FCCs = _interopRequireWildcard(require("./FCC-React-Modules/FCC@1.3"));
+var FCCs = _interopRequireWildcard(require("./FCC-Modules/FCC@1.3"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
