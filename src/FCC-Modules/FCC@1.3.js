@@ -7,6 +7,7 @@ import Window from './function/window/Window'
 import * as UTF from './function/utf/UTF'
 import maths from './function/Math/Math'
 import Code from './function/code/Code'
+import './../css/fcc_css.css'
 const Search = (req, reqid) => {
 	const getid = document.getElementById(reqid)
 	getid.innerHTML = Sciences(req);

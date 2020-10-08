@@ -20,7 +20,16 @@ var html = /*#__PURE__*/function () {
     key: "getid",
     value: function getid() {
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      return document.getElementById(id);
+
+      if (id.indexOf('.') != -1) {
+        id = id.replace('.', '');
+        return document.getElementsByClassName(id);
+      } else if (id.indexOf('#') != -1) {
+        id = id.replace('#', '');
+        return document.getElementById(id);
+      } else {
+        return document.getElementsByTagName(id);
+      }
     }
   }, {
     key: "html",
@@ -30,6 +39,36 @@ var html = /*#__PURE__*/function () {
       var _html = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
       return document.getElementById(id).innerHTML = _html;
+    }
+  }, {
+    key: "fadeIn",
+    value: function fadeIn() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var getid = this.getid(id);
+      getid.classList.add('fadeIn');
+    }
+  }, {
+    key: "fadeOut",
+    value: function fadeOut() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var getid = this.getid(id);
+      getid.classList.add('fadeOut');
+    }
+  }, {
+    key: "addClass",
+    value: function addClass() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var Class = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+      var getid = this.getid(id);
+      getid.classList.add(Class);
+    }
+  }, {
+    key: "removeClass",
+    value: function removeClass() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var Class = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+      var getid = this.getid(id);
+      getid.classList.remove(Class);
     }
   }, {
     key: "jscode",

@@ -1,9 +1,9 @@
 import FCC from './../../src/FCC'
 import './../scss/index.scss'
+//import './../../src/scss/fcc_css.scss'
 import $ from 'jquery'
-
 FCC.Html.jscode("root", `
-<header><div class="head"><p>FCCの使い方</p></div></header>
+<header class="a"><div class="head"><p>FCCの使い方</p></div></header>
 <div class="top">
 <p class="tag po">jQueryよりシンプルな記述で</p>
 <p class="tag lo">複雑な処理が出来るライブラリです</p>
@@ -20,3 +20,4 @@ FCC.Html.jscode("root", `
 <a href="./Math.html"><p class="btn">Math</p></a>
 </div></div>
 `)
+FCC.Html.fadeIn('#root');

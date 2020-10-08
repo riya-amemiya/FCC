@@ -13,7 +13,7 @@ import FCC from './src/FCC'
 ```
 **ES5の場合**
 ```
-import FCC from './lid/FCC'
+<script src="lid/FCC"></script>
 ```
 ## 各モジュールの説明
 

@@ -1,10 +1,34 @@
 class html {
     constructor() {}
     getid(id = "") {
-        return document.getElementById(id)
+        if (id.indexOf('.') != -1) {
+            id = id.replace('.', '')
+            return document.getElementsByClassName(id)
+        } else if (id.indexOf('#') != -1) {
+            id = id.replace('#', '')
+            return document.getElementById(id)
+        } else {
+            return document.getElementsByTagName(id)
+        }
     }
     html(id = "", html = "") {
         return document.getElementById(id).innerHTML = html
+    }
+    fadeIn(id = "") {
+        let getid = this.getid(id)
+        getid.classList.add('fadeIn')
+    }
+    fadeOut(id = "") {
+        let getid = this.getid(id)
+        getid.classList.add('fadeOut')
+    }
+    addClass(id = "", Class = "") {
+        let getid = this.getid(id)
+        getid.classList.add(Class)
+    }
+    removeClass(id = "", Class = "") {
+        let getid = this.getid(id)
+        getid.classList.remove(Class)
     }
     jscode(id = "", html = "") {
         let code = html
