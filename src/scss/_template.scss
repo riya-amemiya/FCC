@@ -42,11 +42,11 @@ body {
 	margin-top: 10px;
 }
 
+
 .fadeIn {
 	opacity: 0;
 	animation: 1s fadein forwards;
 }
-
 
 .fadeOut {
 	opacity: 1;
@@ -72,7 +72,20 @@ body {
 		opacity: 0;
 	}
 }
-
+@mixin fontSize($i,$f) {
+	.fontSize{
+		font-size: $i;
+		animation: 1s fontSize forwards;
+	}
+	@keyframes fontSize{
+	from{
+		font-size: $i; 
+	}
+	to{
+		font-size: $i * $f;
+	}
+}
+}
 @mixin dark-mode {
 	color: lighten(black, 50%);
 	background-color: black;

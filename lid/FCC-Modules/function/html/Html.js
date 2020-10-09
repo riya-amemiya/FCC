@@ -11,6 +11,24 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function sleep(waitSec, callbackFunc) {
+  var spanedSec = 0;
+
+  var waitFunc = function waitFunc() {
+    spanedSec++;
+
+    if (spanedSec >= waitSec) {
+      if (callbackFunc) callbackFunc();
+      return;
+    }
+
+    clearTimeout(id);
+    id = setTimeout(waitFunc, 1000);
+  };
+
+  var id = setTimeout(waitFunc, 1000);
+}
+
 var html = /*#__PURE__*/function () {
   function html() {
     _classCallCheck(this, html);
@@ -38,21 +56,22 @@ var html = /*#__PURE__*/function () {
 
       var _html = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
-      return document.getElementById(id).innerHTML = _html;
+      var getid = this.getid(id);
+      return getid.innerHTML = _html;
     }
   }, {
     key: "fadeIn",
     value: function fadeIn() {
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
       var getid = this.getid(id);
-      getid.classList.add('fadeIn');
+      getid.classList.add("fadeIn");
     }
   }, {
     key: "fadeOut",
     value: function fadeOut() {
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
       var getid = this.getid(id);
-      getid.classList.add('fadeOut');
+      getid.classList.add("fadeOut");
     }
   }, {
     key: "addClass",
@@ -142,6 +161,19 @@ var html = /*#__PURE__*/function () {
       var get = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
       var getid = this.getid(id);
       return getid.className === get;
+    }
+  }, {
+    key: "youtube",
+    value: function youtube() {
+      var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+      var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "video";
+      var part = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "snippet";
+      var q = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : "music";
+      var videoEmbeddable = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : "true";
+      var videoSyndicated = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : "true";
+      var maxResults = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 0;
+      url = "".concat(url, "type=").concat(type, "&part=").concat(part, "t&q=").concat(q, "&videoEmbeddable=").concat(videoEmbeddable, "&videoSyndicated=").concat(videoSyndicated, "&maxResults=").concat(maxResults, "&key=").concat(key);
     }
   }]);
 

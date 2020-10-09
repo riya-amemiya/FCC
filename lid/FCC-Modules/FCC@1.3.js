@@ -5,6 +5,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.sleep = sleep;
+Object.defineProperty(exports, "ajax", {
+  enumerable: true,
+  get: function get() {
+    return _Ajax["default"];
+  }
+});
 Object.defineProperty(exports, "Time", {
   enumerable: true,
   get: function get() {
@@ -41,6 +48,8 @@ var _Search = _interopRequireDefault(require("./components/Search/Search"));
 
 var _Modal_simple = _interopRequireDefault(require("./components/Modal/simples/Modal_simple"));
 
+var _Ajax = _interopRequireDefault(require("./function/ajax/Ajax"));
+
 var _Time = _interopRequireDefault(require("./function/time/Time"));
 
 var _Html = _interopRequireDefault(require("./function/html/Html"));
@@ -55,7 +64,7 @@ var _Math = _interopRequireDefault(require("./function/Math/Math"));
 
 var _Code = _interopRequireDefault(require("./function/code/Code"));
 
-require("./../css/fcc_css.css");
+require("./../../css/fcc_css.css");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -395,7 +404,24 @@ exports.Day = Day;
 var hello = function hello() {
   console.log("Welcome to FCC You can take the tutorial by accessing this URL");
   console.log("https://riya81.github.io/FCC/");
-}; //α version
-
+};
 
 exports.hello = hello;
+
+function sleep(waitSec, callbackFunc) {
+  var spanedSec = 0;
+
+  var waitFunc = function waitFunc() {
+    spanedSec++;
+
+    if (spanedSec >= waitSec) {
+      if (callbackFunc) callbackFunc();
+      return;
+    }
+
+    clearTimeout(id);
+    id = setTimeout(waitFunc, 1000);
+  };
+
+  var id = setTimeout(waitFunc, 1000);
+} //α version

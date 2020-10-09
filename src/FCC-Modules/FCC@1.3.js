@@ -1,13 +1,13 @@
 import Sciences from './components/Search/Search'
 import ModalSimple from "./components/Modal/simples/Modal_simple";
-//import Ajax from './function/ajax/Ajax'
+import ajax from './function/ajax/Ajax'
 import Time from './function/time/Time'
 import Html from './function/html/Html'
-import Window from './function/window/Window'
-import * as UTF from './function/utf/UTF'
-import maths from './function/Math/Math'
-import Code from './function/code/Code'
-import './../css/fcc_css.css'
+import Window from './function/window/Window';
+import * as UTF from './function/utf/UTF';
+import maths from './function/Math/Math';
+import Code from './function/code/Code';
+import './../../css/fcc_css.css'
 const Search = (req, reqid) => {
 	const getid = document.getElementById(reqid)
 	getid.innerHTML = Sciences(req);
@@ -285,7 +285,30 @@ const hello = () => {
 	console.log("Welcome to FCC You can take the tutorial by accessing this URL");
 	console.log("https://riya81.github.io/FCC/");
 }
+
+function sleep(waitSec, callbackFunc) {
+
+	var spanedSec = 0;
+
+	var waitFunc = function () {
+
+		spanedSec++;
+
+		if (spanedSec >= waitSec) {
+			if (callbackFunc) callbackFunc();
+			return;
+		}
+
+		clearTimeout(id);
+		id = setTimeout(waitFunc, 1000);
+
+	};
+
+	var id = setTimeout(waitFunc, 1000);
+
+}
 export {
+	sleep,
 	hello,
 	Modal_simple,
 	Accordion,
@@ -314,7 +337,7 @@ export {
 	Aimg,
 	//CSS,
 	Search,
-	//Ajax,
+	ajax,
 	Time,
 	Html,
 	Code

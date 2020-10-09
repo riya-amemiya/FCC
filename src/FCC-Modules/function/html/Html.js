@@ -1,3 +1,24 @@
+function sleep(waitSec, callbackFunc) {
+
+    var spanedSec = 0;
+
+    var waitFunc = function () {
+
+        spanedSec++;
+
+        if (spanedSec >= waitSec) {
+            if (callbackFunc) callbackFunc();
+            return;
+        }
+
+        clearTimeout(id);
+        id = setTimeout(waitFunc, 1000);
+
+    };
+
+    var id = setTimeout(waitFunc, 1000);
+
+}
 class html {
     constructor() {}
     getid(id = "") {
@@ -12,15 +33,18 @@ class html {
         }
     }
     html(id = "", html = "") {
-        return document.getElementById(id).innerHTML = html
+        let getid = this.getid(id)
+        return getid.innerHTML = html
     }
     fadeIn(id = "") {
         let getid = this.getid(id)
-        getid.classList.add('fadeIn')
+        getid.classList.add(`fadeIn`)
+
     }
     fadeOut(id = "") {
         let getid = this.getid(id)
-        getid.classList.add('fadeOut')
+        getid.classList.add(`fadeOut`)
+
     }
     addClass(id = "", Class = "") {
         let getid = this.getid(id)
@@ -89,6 +113,9 @@ class html {
     hasclass(id = "", get = "") {
         let getid = this.getid(id)
         return getid.className === get
+    }
+    youtube(key = "", url = "", type = "video", part = "snippet", q = "music", videoEmbeddable = "true", videoSyndicated = "true", maxResults = 0) {
+        url = `${url}type=${type}&part=${part}t&q=${q}&videoEmbeddable=${videoEmbeddable}&videoSyndicated=${videoSyndicated}&maxResults=${maxResults}&key=${key}`
     }
 }
 const Html = new html()
