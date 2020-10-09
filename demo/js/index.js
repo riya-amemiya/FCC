@@ -11,6 +11,7 @@ FCC.Html.jscode("root", `
 <div id="a" class="jscode"><p>import FCC from './FCC'</p></div>
 <p>FCCは全ての要素を継承してます</p>
 <p>jQueryの$のような物です</p>
+<p>webpackを使う事前提です</p>
 <p class="tag mi">基本</p>
 <div class="he"><p>Htmlオブジェクト</p></div>
 <div><p>dom操作が出来ます</p></div>

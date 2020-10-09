@@ -1,24 +1,3 @@
-function sleep(waitSec, callbackFunc) {
-
-    var spanedSec = 0;
-
-    var waitFunc = function () {
-
-        spanedSec++;
-
-        if (spanedSec >= waitSec) {
-            if (callbackFunc) callbackFunc();
-            return;
-        }
-
-        clearTimeout(id);
-        id = setTimeout(waitFunc, 1000);
-
-    };
-
-    var id = setTimeout(waitFunc, 1000);
-
-}
 class html {
     constructor() {}
     getid(id = "") {
@@ -39,7 +18,6 @@ class html {
     fadeIn(id = "") {
         let getid = this.getid(id)
         getid.classList.add(`fadeIn`)
-
     }
     fadeOut(id = "") {
         let getid = this.getid(id)
